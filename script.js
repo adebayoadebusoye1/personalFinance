@@ -69,14 +69,14 @@ function addTransactionToDOM(transaction){
 function updateValues(){
     const amounts = transactions.map(x => x.amount)
     const total = amounts.reduce((x, y) => (x += y), 0).toFixed(2);
-    balance.innerHTML = `&#x20A6; ${total}`
+    balance.innerHTML = `$ ${total}`
 
 
     //for income
     const income = amounts.filter(x => x > 0).reduce((x,y) => (x=y), 0).toFixed(2);
-    money_plus.innerHTML = `&#x20A6; ${income}`
+    money_plus.innerHTML = `$ ${income}`
 
-    money_minus.innerHTML = `&#x20A6; ${Math.abs(amounts.filter(x => x < 0).reduce((x,y) => (x += y), 0)).toFixed(2)}`
+    money_minus.innerHTML = `$ ${Math.abs(amounts.filter(x => x < 0).reduce((x,y) => (x += y), 0)).toFixed(2)}`
     // console.log(amounts);
 
 }
